@@ -17,6 +17,7 @@ if dein#load_state('/home/wolfma/.local/share/dein')
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('christoomey/vim-tmux-navigator')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -37,7 +38,9 @@ endif
 
 "End dein Scripts-------------------------
 
-colorscheme monrovia
+set t_Co=256
+colorscheme goodwolf
+
 " }}}
 " Misc {{{
 set ttyfast                     " faster redraw
@@ -66,7 +69,7 @@ set ignorecase          " ignore case when searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight all matches
 " }}}
-" Folding {{{
+"Suppose you want Folding {{{
 "=== folding ===
 set foldmethod=indent   " fold based on indent level
 set foldnestmax=10      " max 10 depth
@@ -74,3 +77,4 @@ set foldenable          " don't fold files by default on open
 nnoremap <space> za
 set foldlevelstart=10    " start with fold level of 1
 " }}}
+" vim:foldmethod=marker:foldlevel=0

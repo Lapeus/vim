@@ -1,0 +1,45 @@
+" TRIVIA {{{
+" list all loaded scripts
+scriptnames
+
+" edit file
+edit / e
+
+" }}}
+
+" Row Counts left
+set number
+set nonumber
+
+" Cursor Row in the right Corner 
+set ruler
+
+" SCREEN MOVEMENT {{{ 
+" always keep x lines around cursor
+set scolloff=x
+" }}}
+" Searching {{{
+" ignoring cases
+set ignorecase
+set noignorecases
+
+" highlighting
+set hlsearch
+set nohlsearch
+nohlsearch
+
+" search while typing
+set incsearch
+
+" warpping around in the file
+set wrapscan
+set nowrapscan
+
+
+" }}}
+
+" JUMPING {{{
+" show all Marks
+marks
+
+" }}}

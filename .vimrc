@@ -20,8 +20,11 @@ if dein#load_state('/home/wolfma/.local/share/dein')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('christoomey/vim-tmux-navigator')
+<<<<<<< HEAD
   call dein#add('vim-latex/vim-latex')
   call dein#add('ctrlpvim/ctrlp.vim')
+=======
+>>>>>>> 3cafd2cd8819575013f97038fa6815a88d1788d6
   call dein#add('scrooloose/nerdtree')
 
   " You can specify revision/branch/tag.

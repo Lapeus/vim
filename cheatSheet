@@ -43,3 +43,9 @@ mx    - set  jumpmark x e {a..z}
 
 
 " }}}
+
+" COPY AND PASTE {{{
+yy    - copy line
+p     - paste last vim yank
+"+p   - paste last system yank
+}}}

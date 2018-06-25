@@ -5,6 +5,13 @@ set nocompatible
 filetype off
 
 " Load plugins here (pathogen/vundle/vim-plug)
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " This is some fiesta / with manual .exe copying
@@ -75,6 +82,8 @@ set laststatus=2
 " Last line
 set showmode
 set showcmd
+set wildmenu
+set wildmode=longest:full,full
 
 " Searching
 nnoremap / /\v

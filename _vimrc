@@ -4,13 +4,22 @@ set nocompatible
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
-" Load plugins here (pathogen/vundle/vim-plug)
 
-"if empty(glob('C:Users/mwolf/.vim/autoload/plug.vim'))
-"  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-"    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-"endif
+" autoinstall vim-plug
+let plugPath = $HOME . '/.vim/plugged'
+if empty(glob($HOME . '/.vim/autoload/plug.vim'))
+silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" win32 specific stuff
+if has('win32')
+  " Backupdir / Swap
+  silent execute '!mkdir "'.$HOME.'/temp"'
+  " Cleanup
+  silent execute '!del "'.$HOME.'/temp/*~"'
+endif
 
 " Test
 " let g:ale_fixers = {
@@ -19,10 +28,11 @@ filetype off
 "             \   'html':['tidy'],
 "             \}
 
-call plug#begin('C:User/mwolf/.vim/plugged')
+call plug#begin(plugPath)
+" Load plugins here (pathogen/vundle/vim-plug)
 
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " This is some fiesta / with manual .exe copying
-"Plug 'junegunn/fzf.vim' " Super nice Fuzzy Finder WoW
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " This is some fiesta / with manual .exe copying
+Plug 'junegunn/fzf.vim' " Super nice Fuzzy Finder WoW
 Plug 'itchyny/lightline.vim' " Status line visual aid
 "Plug 'terryma/vim-multiple-cursors' " Multi Cursor Support
 Plug 'scrooloose/nerdtree' " Nerdtree
@@ -31,8 +41,6 @@ Plug 'fcpg/vim-orbital'
 
 call plug#end()
 
-silent execute '!mkdir "'.$HOME.'/temp"'
-silent execute '!del "'.$HOME.'/temp/*~"'
 set backupdir=$HOME/temp//
 set directory=$HOME/temp//
 
